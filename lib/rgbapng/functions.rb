@@ -7,12 +7,15 @@ module Sass::Script::Functions
   def png_pixelate(c, dir = "rgbapng")
     color = ChunkyPNG::Color.rgba(c.red, c.green, c.blue, (c.alpha * 100 * 2.55).round)
     image = ChunkyPNG::Image.new(1,1, color)
+    dir   = dir.is_a?(Sass::Script::String) ? dir.value : dir
     file  = File.join(dir, ChunkyPNG::Color.to_hex(color).gsub(/^#/, "") + ".png")
-    path  = File.join(Compass.configuration.images_path, file)
+    path = File.join(Compass.configuration.images_path, file)
         
     if !File.exists?(path) || options[:force]
       puts "Writing #{file}"
-      Dir.mkdir(dir) unless File.exists?(dir)
+      [Compass.configuration.images_path, File.join(Compass.configuration.images_path, dir)].each do |d|
+        Dir.mkdir(d) unless File.exists?(d)        
+      end
       image.save(path)
     end
     
