@@ -28,7 +28,7 @@ There is a single variable that defines the path to which your PNG images will b
 
 There are two mixins available to you.
 
-#### `rgba-background($color, [$path])`
+#### rgba-background($color, [$path])
 
 Sets the background property to use the RGBA value, falling back to the compiled PNG.
 
@@ -39,7 +39,7 @@ Compiles to:
     background: url('/images/rgbapng/000000bf.png?1282127952');
     background: rgba(0, 0, 0, 0.75);
 
-#### `rgba-background-inline($color)`
+#### rgba-background-inline($color)
 
 Sets the background property to use the RGBA value, falling back to a base64 encoded image data.
 
