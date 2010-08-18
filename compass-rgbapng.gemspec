@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Aaron Russell"]
   s.date        = "2010-08-18"
   s.summary     = %q{Compass plugin for providing cross-browser compatible RGBA support by creating transparent PNGs on the fly for browsers that don't support RGBA.}
-  s.description = %q{Compass plugin for providing cross-browser compatible RGBA support by creating transparent PNGs on the fly for browsers that don't support RGBA. Uses the pure Ruby ChunkyPNG library for hassle free install and deployment and increased performance.}
+  s.description = %q{Compass plugin for providing cross-browser compatible RGBA support by creating transparent PNGs on the fly for browsers that don't support RGBA. Uses the pure Ruby ChunkyPNG library for hassle free install and deployment.}
   s.email       = "aaron@gc4.co.uk"
   s.homepage    = "http://github.com/aaronrussell/compass-rgbapng"
 

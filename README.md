@@ -1,6 +1,6 @@
 # rgbapng - Compass plugin
 
-rgbapng is a Compass plugin for providing cross browser compatible RGBA support. It works by creating single pixel transparent PNGs on the fly for browsers that don't support RGBA. It uses the pure Ruby ChunkyPNG library resulting in hassle-free installation and deployment, and increased performance.
+rgbapng is a Compass plugin for providing cross browser compatible RGBA support. It works by creating single pixel alpha-transparent PNGs on the fly for browsers that don't support RGBA. It uses the pure Ruby ChunkyPNG library resulting in hassle-free installation and deployment.
 
 ## Installation
 
