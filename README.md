@@ -1,6 +1,6 @@
 # rgbapng - Compass plugin
 
-rgbapng is a Compass plugin for providing cross browser compatible RGBA support. It works by creating single pixel alpha-transparent PNGs on the fly for browsers that don't support RGBA. It uses the pure Ruby ChunkyPNG library resulting in hassle-free installation and deployment.
+rgbapng is a Compass plugin for providing cross-browser* compatible RGBA support. It works by creating single pixel alpha-transparent PNGs on the fly for browsers that don't support RGBA. It uses the pure Ruby ChunkyPNG library resulting in hassle-free installation and deployment.
 
 ## Installation
 
@@ -60,6 +60,16 @@ There are two `Sass::Script` functions which can be used in your SASS:
     
     # Returns a String of the base64 encoded image data
     png_base64(color)
+
+## * Cross-browser? Really?
+
+OK, caveat time. When I say "cross-browser", what I really mean is all browsers that either natively support RGBA or support alpha-transparent PNGs. What I don't mean, is IE6. If alpha-transparency in IE6 is important to you, here are some suggestions:
+
+* Use [DD_BelatedPNG](http://www.dillerdesign.com/experiment/DD_belatedPNG/) JavaScript library to bootstrap PNG support to IE6.
+* Don't use this plugin at all and instead create your own mixin using [Microsoft's proprietary filters](http://dimox.net/cross-browser-rgba-support/) - just make sure you wash your hands afterwards!
+* Be a rebel and either forget about IE6 or serve it up a [universal stylesheet](http://forabeautifulweb.com/blog/about/universal_internet_explorer_6_css).
+
+The choice is yours.
 
 ## Credit where it's due
 
