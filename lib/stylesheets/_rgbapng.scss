@@ -15,3 +15,10 @@ $rgbapng_path: 'rgbapng';
   background: $color;
 }
 
+@function rgba-png($color, $dir: $rgbapng_path) {
+  @return image_url(png_pixelate($color, $dir));
+}
+
+@function rgba-inline($color) {
+  @return png_base64($color);
+}
