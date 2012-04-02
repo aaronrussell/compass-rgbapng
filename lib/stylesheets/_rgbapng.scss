@@ -3,7 +3,7 @@
   rgba-background mixin can now be passed an option $dir variable
 */
 
-$rgbapng_path: 'rgbapng';
+$rgbapng_path: 'rgbapng' !default;
 
 @mixin rgba-background($color, $dir:$rgbapng_path){
   background: image_url(png_pixelate($color, $dir));
