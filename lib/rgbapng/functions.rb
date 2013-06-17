@@ -16,7 +16,7 @@ module Sass::Script::Functions
     path = File.join(Compass.configuration.images_path, file)
         
     if !File.exists?(path) || options[:force]
-      puts "Writing #{file}"
+      puts "Writing #{file}" unless options[:quiet]
       [Compass.configuration.images_path, File.join(Compass.configuration.images_path, dir)].each do |d|
         Dir.mkdir(d) unless File.exists?(d)        
       end
