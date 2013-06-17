@@ -1,15 +1,16 @@
 // Mixins are slightly modified from Benjamin Doherty's first implementations: http://gist.github.com/377912
 // rgba-background mixin can now be passed an option $dir variable
 
-$rgbapng_path: 'rgbapng' !default;
+$rgbapng_path:    'rgbapng' !default;
+$rgbapng_px_size: 5 !default;
 
-@mixin rgba-background($color, $dir:$rgbapng_path){
+@mixin rgba-background($color, $dir:$rgbapng_path, $pixel:$rgbapng_px_size){
   background: rgba-png($color, $dir);
   background: $color;
 }
 
-@mixin rgba-background-inline($color){
-  background: rgba-inline($color);
+@mixin rgba-background-inline($color, $pixel:$rgbapng_px_size){
+  background: rgba-inline($color, $pixel);
   background: $color;
 }
 
@@ -18,5 +19,5 @@ $rgbapng_path: 'rgbapng' !default;
 }
 
 @function rgba-inline($color) {
-  @return png_base64($color);
+  @return png_base64($color, $pixel);
 }

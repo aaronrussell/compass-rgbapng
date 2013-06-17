@@ -20,15 +20,16 @@ And then import the mixins to your SASS/SCSS files:
 
 ### Configurable variables
 
-There is a single variable that defines the path to which your PNG images will be saved. This defaults to `rgbapng` inside your Compass images directory. Change the path globally with:
+There are two customzable global variables. This first `$rgbapng_path` defines the path to which your PNG images will be saved. This defaults to `rgbapng` inside your Compass images directory. The second `$rgbapng_px_size` defines the pixel square size of the generated png. This defaults to a 5x5 square.
 
     $rgbapng_path: 'my_pngs';
+    $rgbapng_px_size: 8;
 
 ### Mixins
 
 There are two mixins available to you.
 
-#### rgba-background($color, [$path])
+#### rgba-background($color, [$path, $pixel])
 
 Sets the background property to use the RGBA value, falling back to the compiled PNG.
 
@@ -39,7 +40,7 @@ Compiles to:
     background: url('/images/rgbapng/000000bf.png?1282127952');
     background: rgba(0, 0, 0, 0.75);
 
-#### rgba-background-inline($color)
+#### rgba-background-inline($color, [$pixel])
 
 Sets the background property to use the RGBA value, falling back to a base64 encoded image data.
 
