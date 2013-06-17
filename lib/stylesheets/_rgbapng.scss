@@ -6,16 +6,16 @@
 $rgbapng_path: 'rgbapng' !default;
 
 @mixin rgba-background($color, $dir:$rgbapng_path){
-  background: image_url(png_pixelate($color, $dir));
+  background: rgba-png($color, $dir);
   background: $color;
 }
 
 @mixin rgba-background-inline($color){
-  background: png_base64($color);
+  background: rgba-inline($color);
   background: $color;
 }
 
-@function rgba-png($color, $dir: $rgbapng_path) {
+@function rgba-png($color, $dir:$rgbapng_path) {
   @return image_url(png_pixelate($color, $dir));
 }
 
