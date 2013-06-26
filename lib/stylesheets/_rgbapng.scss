@@ -5,7 +5,7 @@ $rgbapng_path:    'rgbapng' !default;
 $rgbapng_px_size: 5 !default;
 
 @mixin rgba-background($color, $dir:$rgbapng_path, $pixel:$rgbapng_px_size){
-  background: rgba-png($color, $dir);
+  background: rgba-png($color, $dir, $pixel);
   background: $color;
 }
 
@@ -14,10 +14,10 @@ $rgbapng_px_size: 5 !default;
   background: $color;
 }
 
-@function rgba-png($color, $dir:$rgbapng_path) {
-  @return image_url(png_pixelate($color, $dir));
+@function rgba-png($color, $dir:$rgbapng_path, $pixel:$rgbapng_px_size) {
+  @return image_url(png_pixelate($color, $dir, $pixel));
 }
 
-@function rgba-inline($color) {
+@function rgba-inline($color, $pixel:$rgbapng_px_size) {
   @return png_base64($color, $pixel);
 }

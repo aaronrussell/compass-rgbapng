@@ -12,7 +12,7 @@ module Sass::Script::Functions
     color = ChunkyPNG::Color.rgba(c.red, c.green, c.blue, (c.alpha * 100 * 2.55).round)
     image = ChunkyPNG::Image.new(px.to_i, px.to_i, color)
     dir   = dir.is_a?(Sass::Script::String) ? dir.value : dir
-    file  = File.join(dir, ChunkyPNG::Color.to_hex(color).gsub(/^#/, "") + ".png")
+    file  = File.join(dir, ChunkyPNG::Color.to_hex(color).gsub(/^#/, "") + "-#{ px.to_s }.png")
     path = File.join(Compass.configuration.images_path, file)
 
     if !File.exists?(path) || options[:force]
