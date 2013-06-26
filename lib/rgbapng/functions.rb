@@ -10,7 +10,7 @@ module Sass::Script::Functions
 
   def png_pixelate(c, dir = "rgbapng", px = 5)
     color = ChunkyPNG::Color.rgba(c.red, c.green, c.blue, (c.alpha * 100 * 2.55).round)
-    image = ChunkyPNG::Image.new(px, px, color)
+    image = ChunkyPNG::Image.new(px.to_i, px.to_i, color)
     dir   = dir.is_a?(Sass::Script::String) ? dir.value : dir
     file  = File.join(dir, ChunkyPNG::Color.to_hex(color).gsub(/^#/, "") + ".png")
     path = File.join(Compass.configuration.images_path, file)
@@ -28,7 +28,7 @@ module Sass::Script::Functions
 
   def png_base64(c, px = 5)
     color = ChunkyPNG::Color.rgba(c.red, c.green, c.blue, (c.alpha * 100 * 2.55).round)
-    image = ChunkyPNG::Image.new(px, px, color)
+    image = ChunkyPNG::Image.new(px.to_i, px.to_i, color)
     data  = Base64.encode64(image.to_blob).gsub("\n", "")
 
     Sass::Script::String.new("url('data:image/png;base64,#{data}')")
